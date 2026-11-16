@@ -1,0 +1,6 @@
+<resources>
+    <item name="load_samples" type="id" />
+    <item name="settings" type="id" />
+    <item name="list_summary" type="id" />
+    <item name="storage_status" type="id" />
+</resources>

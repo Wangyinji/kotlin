@@ -1,0 +1,11 @@
+<resources>
+    <plurals name="summary_en">
+        <item quantity="one">%1$d place to explore</item>
+        <item quantity="other">%1$d places to explore</item>
+    </plurals>
+    <plurals name="summary_fr">
+        <item quantity="one">%1$d logement à découvrir</item>
+        <item quantity="other">%1$d logements à découvrir</item>
+    </plurals>
+    <string name="french_option">Français / French interface</string>
+</resources>
