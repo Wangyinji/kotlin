@@ -7,14 +7,12 @@ import androidx.test.platform.app.InstrumentationRegistry
 import edu.isep.localnest.data.ListingRepository
 import edu.isep.localnest.data.UserPreferences
 import org.junit.Assert.*
-import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 
 /** Remove @Ignore after completing the corresponding exercise. */
 @RunWith(AndroidJUnit4::class)
 class StorageContractTest {
-    @Ignore("UP-1/2/3: expected to fail until Room exercises are completed")
     @Test fun repositoryRestoresRowsAndFavoriteInANewInstance() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val first = ListingRepository(context)
@@ -27,7 +25,6 @@ class StorageContractTest {
         first.setFavorite(1, false)
     }
 
-    @Ignore("UP-4: expected to fail until SharedPreferences exercises are completed")
     @Test fun preferencesRestoreInANewInstance() {
         val base = InstrumentationRegistry.getInstrumentation().targetContext
         // Use an isolated preferences file to preserve the student's own settings.

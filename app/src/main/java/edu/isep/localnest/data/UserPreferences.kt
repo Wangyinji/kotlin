@@ -2,7 +2,6 @@ package edu.isep.localnest.data
 
 import android.content.Context
 
-/** UP-4: replace temporary state with SharedPreferences reads and writes. */
 class UserPreferences(context: Context) {
     private val storage = context.applicationContext
         .getSharedPreferences("localnest_settings", Context.MODE_PRIVATE)
@@ -15,14 +14,20 @@ class UserPreferences(context: Context) {
         private set
 
     init {
-        // TODO UP-4a: restore language, favorites_only, budget_only from storage.
-        // Defaults: "en", false, false. Only accept language codes "en" and "fr".
+        language = if (storage.getString("language", "en") == "fr") "fr" else "en"
+        favoritesOnly = storage.getBoolean("favorites_only", false)
+        budgetOnly = storage.getBoolean("budget_only", false)
     }
 
     fun save(language: String, favoritesOnly: Boolean, budgetOnly: Boolean) {
         this.language = if (language == "fr") "fr" else "en"
         this.favoritesOnly = favoritesOnly
         this.budgetOnly = budgetOnly
-        // TODO UP-4b: persist these fields with storage.edit() and apply().
+
+        storage.edit()
+            .putString("language", this.language)
+            .putBoolean("favorites_only", this.favoritesOnly)
+            .putBoolean("budget_only", this.budgetOnly)
+            .apply()
     }
 }

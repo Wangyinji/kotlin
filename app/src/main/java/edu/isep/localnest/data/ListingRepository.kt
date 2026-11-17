@@ -9,21 +9,16 @@ import android.content.Context
  */
 class ListingRepository(context: Context) {
     private val dao = AppDatabase.getInstance(context).listingDao()
-    private val preview = mutableListOf<Listing>()
 
     fun getListings(): List<Listing> {
-        // TODO UP-1: return the DAO's cached rows instead of the memory preview.
-        return preview.sortedWith(compareBy<Listing> { it.monthlyRent }.thenBy { it.id })
+        return dao.getAll()
     }
 
     fun cacheSamples() {
-        // TODO UP-2: insert SampleData.create() into Room using the DAO.
-        // Repeated imports must not duplicate rows or overwrite favorites.
-        if (preview.isEmpty()) preview.addAll(SampleData.create())
+        dao.insertAll(SampleData.create())
     }
 
     fun setFavorite(id: Long, favorite: Boolean) {
-        // TODO UP-3: update the matching Room row instead of the in-memory object.
-        preview.find { it.id == id }?.favorite = favorite
+        dao.setFavorite(id,favorite)
     }
 }

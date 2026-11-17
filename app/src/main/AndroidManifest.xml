@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
         android:allowBackup="false"
-        android:label="LocalNest UP"
+        android:label="LocalNest Demo"
         android:icon="@drawable/ic_home"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

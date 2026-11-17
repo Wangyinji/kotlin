@@ -76,8 +76,8 @@ class MainActivity : Activity() {
             .apply { setPadding(0, dp(12), 0, dp(8)) })
         page.addView(label(t("A local-first rental listing exercise.",
             "Un exercice de stockage local de logements."), 14, muted))
-        page.addView(label(t("UP STARTER • temporary memory only\nComplete the TODOs to keep data after restart.",
-            "VERSION UP • mémoire temporaire\nComplétez les TODO pour conserver les données."), 12, ink).apply {
+        page.addView(label(t("LOCAL STORAGE DEMO\nListings and preferences are saved on this device.",
+            "DÉMO DE STOCKAGE LOCAL\nLes annonces et préférences sont enregistrées sur cet appareil."), 12, ink).apply {
             setPadding(dp(14), dp(12), dp(14), dp(12))
             background = background(Color.rgb(239, 228, 199), 14)
         }, full().apply { setMargins(0, dp(20), 0, dp(14)) })
@@ -101,7 +101,7 @@ class MainActivity : Activity() {
         page.addView(summary)
         cards = column()
         page.addView(cards)
-        page.addView(label("ROOM / SQLITE   +   SHAREDPREFERENCES\nISEP • Skills presentation • Unfinished Project", 10, muted)
+        page.addView(label("ROOM / SQLITE   +   SHAREDPREFERENCES\nISEP • Skills presentation • Demo", 10, muted)
             .apply { setPadding(0, dp(22), 0, 0) })
         render()
     }
