@@ -89,10 +89,7 @@ Storage work already runs off the main thread. Do not add `allowMainThreadQuerie
 - The completed Demo should be maintained separately; this UP repository should
   remain a usable exercise without a committed solution.
 
-See [docs/RUN_ZH.md](docs/RUN_ZH.md) for Chinese setup and demonstration instructions,
-and [docs/VALIDATION.md](docs/VALIDATION.md) for verification results.
-For a plain-language explanation of the course deliverables, read
-[docs/ASSIGNMENT_ZH.md](docs/ASSIGNMENT_ZH.md).
+See [docs/VALIDATION.md](docs/VALIDATION.md) for verification results.
 
 <img src="docs/images/up-preview.png" alt="LocalNest UP emulator preview" width="320" />
 
